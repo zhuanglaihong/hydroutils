@@ -17,15 +17,43 @@
          <lastmod>2025-08-19</lastmod>
     </url>
     <url>
-         <loc>https://zhuanglaihong.github.io/hydroutils/hydroutils/</loc>
-         <lastmod>2025-08-19</lastmod>
-    </url>
-    <url>
          <loc>https://zhuanglaihong.github.io/hydroutils/installation/</loc>
          <lastmod>2025-08-19</lastmod>
     </url>
     <url>
          <loc>https://zhuanglaihong.github.io/hydroutils/usage/</loc>
+         <lastmod>2025-08-19</lastmod>
+    </url>
+    <url>
+         <loc>https://zhuanglaihong.github.io/hydroutils/api/hydro_arithmetric/</loc>
+         <lastmod>2025-08-19</lastmod>
+    </url>
+    <url>
+         <loc>https://zhuanglaihong.github.io/hydroutils/api/hydro_file/</loc>
+         <lastmod>2025-08-19</lastmod>
+    </url>
+    <url>
+         <loc>https://zhuanglaihong.github.io/hydroutils/api/hydro_log/</loc>
+         <lastmod>2025-08-19</lastmod>
+    </url>
+    <url>
+         <loc>https://zhuanglaihong.github.io/hydroutils/api/hydro_plot/</loc>
+         <lastmod>2025-08-19</lastmod>
+    </url>
+    <url>
+         <loc>https://zhuanglaihong.github.io/hydroutils/api/hydro_s3/</loc>
+         <lastmod>2025-08-19</lastmod>
+    </url>
+    <url>
+         <loc>https://zhuanglaihong.github.io/hydroutils/api/hydro_stat/</loc>
+         <lastmod>2025-08-19</lastmod>
+    </url>
+    <url>
+         <loc>https://zhuanglaihong.github.io/hydroutils/api/hydro_time/</loc>
+         <lastmod>2025-08-19</lastmod>
+    </url>
+    <url>
+         <loc>https://zhuanglaihong.github.io/hydroutils/api/hydroutils/</loc>
          <lastmod>2025-08-19</lastmod>
     </url>
 </urlset>
