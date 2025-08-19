@@ -1,35 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://OuyangWenyu.github.io/hydroutils/</loc>
+         <loc>https://zhuanglaihong.github.io/hydroutils/</loc>
          <lastmod>2025-08-19</lastmod>
     </url>
     <url>
-         <loc>https://OuyangWenyu.github.io/hydroutils/changelog/</loc>
+         <loc>https://zhuanglaihong.github.io/hydroutils/changelog/</loc>
          <lastmod>2025-08-19</lastmod>
     </url>
     <url>
-         <loc>https://OuyangWenyu.github.io/hydroutils/contributing/</loc>
+         <loc>https://zhuanglaihong.github.io/hydroutils/contributing/</loc>
          <lastmod>2025-08-19</lastmod>
     </url>
     <url>
-         <loc>https://OuyangWenyu.github.io/hydroutils/faq/</loc>
+         <loc>https://zhuanglaihong.github.io/hydroutils/faq/</loc>
          <lastmod>2025-08-19</lastmod>
     </url>
     <url>
-         <loc>https://OuyangWenyu.github.io/hydroutils/hydro_plot/</loc>
+         <loc>https://zhuanglaihong.github.io/hydroutils/hydroutils/</loc>
          <lastmod>2025-08-19</lastmod>
     </url>
     <url>
-         <loc>https://OuyangWenyu.github.io/hydroutils/hydroutils/</loc>
+         <loc>https://zhuanglaihong.github.io/hydroutils/installation/</loc>
          <lastmod>2025-08-19</lastmod>
     </url>
     <url>
-         <loc>https://OuyangWenyu.github.io/hydroutils/installation/</loc>
-         <lastmod>2025-08-19</lastmod>
-    </url>
-    <url>
-         <loc>https://OuyangWenyu.github.io/hydroutils/usage/</loc>
+         <loc>https://zhuanglaihong.github.io/hydroutils/usage/</loc>
          <lastmod>2025-08-19</lastmod>
     </url>
 </urlset>
