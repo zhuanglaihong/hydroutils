@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://zhuanglaihong.github.io/hydroutils/api/hydro_s3/">
       
       
-        <link rel="prev" href="../hydro_arithmetric/">
+        <link rel="prev" href="../hydro_file/">
       
       
         <link rel="next" href="../hydro_log/">
@@ -607,7 +607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hydro_arithmetric/" class="md-nav__link">
+      <a href="../hydro_arithmetric.md" class="md-nav__link">
         
   
   
@@ -754,6 +754,60 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Reference
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hydroutils.hydro_s3" class="md-nav__link">
+    <span class="md-ellipsis">
+      hydro_s3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hydroutils.hydro_s3.boto3_download_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      boto3_download_file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hydroutils.hydro_s3.boto3_upload_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      boto3_upload_file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hydroutils.hydro_s3.minio_download_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      minio_download_file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hydroutils.hydro_s3.minio_upload_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      minio_upload_file
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -892,7 +946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://github.com/zhuanglaihong/hydroutils/issues" class="md-nav__link">
+      <a href="https://github.com/OuyangWenyu/hydroutils/issues" class="md-nav__link">
         
   
   
@@ -1016,6 +1070,60 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Reference
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hydroutils.hydro_s3" class="md-nav__link">
+    <span class="md-ellipsis">
+      hydro_s3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hydroutils.hydro_s3.boto3_download_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      boto3_download_file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hydroutils.hydro_s3.boto3_upload_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      boto3_upload_file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hydroutils.hydro_s3.minio_download_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      minio_download_file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hydroutils.hydro_s3.minio_upload_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      minio_upload_file
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1098,6 +1206,923 @@
 <li>List bucket contents after upload</li>
 <li>Simple and consistent API for both services</li>
 </ul>
+<h2 id="api-reference">API Reference<a class="headerlink" href="#api-reference" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="hydroutils.hydro_s3"></a>
+    <div class="doc doc-contents first">
+
+        <p>Author: Wenyu Ouyang
+Date: 2023-10-27 15:08:16
+LastEditTime: 2023-10-27 15:31:13
+LastEditors: Wenyu Ouyang
+Description: Some functions to deal with s3 file system
+FilePath: /hydroutils/hydroutils/hydro_s3.py
+Copyright (c) 2023-2024 Wenyu Ouyang. All rights reserved.</p>
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="hydroutils.hydro_s3.boto3_download_file" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">boto3_download_file</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">bucket_name</span><span class="p">,</span> <span class="n">object_name</span><span class="p">,</span> <span class="n">file_path</span><span class="p">)</span></code>
+
+<a href="#hydroutils.hydro_s3.boto3_download_file" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Download a file from S3 using boto3.</p>
+<p>This function downloads an object from S3 storage to a local file using
+the boto3 client. It provides a simple wrapper around boto3's download_file
+method.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>client</code>
+            </td>
+            <td>
+                  <code><span title="boto3.client">client</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Initialized boto3 S3 client instance.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>bucket_name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Name of the bucket containing the object.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>object_name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Name of the object to download.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>file_path</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Local path where the file should be saved.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <blockquote>
+<blockquote>
+<blockquote>
+<p>import boto3
+client = boto3.client('s3',
+...                      endpoint_url='http://localhost:9000',
+...                      aws_access_key_id='access_key',
+...                      aws_secret_access_key='secret_key')
+boto3_download_file(client,
+...                    'mybucket',
+...                    'data/file.csv',
+...                    '/local/path/file.csv')</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</details>
+
+            <details class="quote">
+              <summary>Source code in <code>hydroutils/hydro_s3.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">boto3_download_file</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">bucket_name</span><span class="p">,</span> <span class="n">object_name</span><span class="p">,</span> <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Download a file from S3 using boto3.</span>
+
+<span class="sd">    This function downloads an object from S3 storage to a local file using</span>
+<span class="sd">    the boto3 client. It provides a simple wrapper around boto3&#39;s download_file</span>
+<span class="sd">    method.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        client (boto3.client): Initialized boto3 S3 client instance.</span>
+<span class="sd">        bucket_name (str): Name of the bucket containing the object.</span>
+<span class="sd">        object_name (str): Name of the object to download.</span>
+<span class="sd">        file_path (str): Local path where the file should be saved.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; import boto3</span>
+<span class="sd">        &gt;&gt;&gt; client = boto3.client(&#39;s3&#39;,</span>
+<span class="sd">        ...                      endpoint_url=&#39;http://localhost:9000&#39;,</span>
+<span class="sd">        ...                      aws_access_key_id=&#39;access_key&#39;,</span>
+<span class="sd">        ...                      aws_secret_access_key=&#39;secret_key&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; boto3_download_file(client,</span>
+<span class="sd">        ...                    &#39;mybucket&#39;,</span>
+<span class="sd">        ...                    &#39;data/file.csv&#39;,</span>
+<span class="sd">        ...                    &#39;/local/path/file.csv&#39;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">bucket_name</span><span class="p">,</span> <span class="n">object_name</span><span class="p">,</span> <span class="n">file_path</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="hydroutils.hydro_s3.boto3_upload_file" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">boto3_upload_file</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">bucket_name</span><span class="p">,</span> <span class="n">object_name</span><span class="p">,</span> <span class="n">file_path</span><span class="p">)</span></code>
+
+<a href="#hydroutils.hydro_s3.boto3_upload_file" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Upload a file to S3 using boto3.</p>
+<p>This function uploads a local file to S3 storage using the boto3 client.
+If the specified bucket doesn't exist, it will be created automatically.
+After upload, it returns a list of all objects in the bucket.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>client</code>
+            </td>
+            <td>
+                  <code><span title="boto3.client">client</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Initialized boto3 S3 client instance.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>bucket_name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Name of the bucket to upload to.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>object_name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Name to give the object in S3 storage.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>file_path</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to the local file to upload.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>list[str]: List of all object keys in the bucket after upload.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="note" open>
+  <summary>Note</summary>
+  <ul>
+<li>Creates bucket if it doesn't exist</li>
+<li>Uses upload_file for efficient file upload</li>
+<li>Lists all objects in bucket after upload</li>
+<li>Handles bucket listing and creation using boto3's API</li>
+</ul>
+</details>
+
+<details class="example" open>
+  <summary>Example</summary>
+  <blockquote>
+<blockquote>
+<blockquote>
+<p>import boto3
+client = boto3.client('s3',
+...                      endpoint_url='http://localhost:9000',
+...                      aws_access_key_id='access_key',
+...                      aws_secret_access_key='secret_key')
+objects = boto3_upload_file(client,
+...                            'mybucket',
+...                            'data/file.csv',
+...                            '/local/path/file.csv')
+print(objects)
+['data/file.csv', 'data/other.csv']</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</details>
+
+            <details class="quote">
+              <summary>Source code in <code>hydroutils/hydro_s3.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">boto3_upload_file</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">bucket_name</span><span class="p">,</span> <span class="n">object_name</span><span class="p">,</span> <span class="n">file_path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Upload a file to S3 using boto3.</span>
+
+<span class="sd">    This function uploads a local file to S3 storage using the boto3 client.</span>
+<span class="sd">    If the specified bucket doesn&#39;t exist, it will be created automatically.</span>
+<span class="sd">    After upload, it returns a list of all objects in the bucket.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        client (boto3.client): Initialized boto3 S3 client instance.</span>
+<span class="sd">        bucket_name (str): Name of the bucket to upload to.</span>
+<span class="sd">        object_name (str): Name to give the object in S3 storage.</span>
+<span class="sd">        file_path (str): Path to the local file to upload.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list[str]: List of all object keys in the bucket after upload.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        - Creates bucket if it doesn&#39;t exist</span>
+<span class="sd">        - Uses upload_file for efficient file upload</span>
+<span class="sd">        - Lists all objects in bucket after upload</span>
+<span class="sd">        - Handles bucket listing and creation using boto3&#39;s API</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; import boto3</span>
+<span class="sd">        &gt;&gt;&gt; client = boto3.client(&#39;s3&#39;,</span>
+<span class="sd">        ...                      endpoint_url=&#39;http://localhost:9000&#39;,</span>
+<span class="sd">        ...                      aws_access_key_id=&#39;access_key&#39;,</span>
+<span class="sd">        ...                      aws_secret_access_key=&#39;secret_key&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; objects = boto3_upload_file(client,</span>
+<span class="sd">        ...                            &#39;mybucket&#39;,</span>
+<span class="sd">        ...                            &#39;data/file.csv&#39;,</span>
+<span class="sd">        ...                            &#39;/local/path/file.csv&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; print(objects)</span>
+<span class="sd">        [&#39;data/file.csv&#39;, &#39;data/other.csv&#39;]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Make a bucket</span>
+    <span class="n">bucket_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">dic</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">dic</span> <span class="ow">in</span> <span class="n">client</span><span class="o">.</span><span class="n">list_buckets</span><span class="p">()[</span><span class="s2">&quot;Buckets&quot;</span><span class="p">]]</span>
+    <span class="k">if</span> <span class="n">bucket_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">bucket_names</span><span class="p">:</span>
+        <span class="n">client</span><span class="o">.</span><span class="n">create_bucket</span><span class="p">(</span><span class="n">Bucket</span><span class="o">=</span><span class="n">bucket_name</span><span class="p">)</span>
+    <span class="c1"># Upload an object</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">upload_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">bucket_name</span><span class="p">,</span> <span class="n">object_name</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">dic</span><span class="p">[</span><span class="s2">&quot;Key&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">dic</span> <span class="ow">in</span> <span class="n">client</span><span class="o">.</span><span class="n">list_objects</span><span class="p">(</span><span class="n">Bucket</span><span class="o">=</span><span class="n">bucket_name</span><span class="p">)[</span><span class="s2">&quot;Contents&quot;</span><span class="p">]]</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="hydroutils.hydro_s3.minio_download_file" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">minio_download_file</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">bucket_name</span><span class="p">,</span> <span class="n">object_name</span><span class="p">,</span> <span class="n">file_path</span><span class="p">,</span> <span class="n">version_id</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#hydroutils.hydro_s3.minio_download_file" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Download a file from MinIO S3-compatible storage.</p>
+<p>This function downloads an object from MinIO storage to a local file. It
+supports versioned objects and handles UTF-8 encoded text files. The function
+ensures proper cleanup of resources after download.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>client</code>
+            </td>
+            <td>
+                  <code><span title="minio.Minio">Minio</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Initialized MinIO client instance.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>bucket_name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Name of the bucket containing the object.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>object_name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Name of the object to download.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>file_path</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Local path where the file should be saved.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>version_id</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Version ID for versioned objects.
+Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="note" open>
+  <summary>Note</summary>
+  <ul>
+<li>Assumes UTF-8 encoding for text files</li>
+<li>Properly closes and releases connection after download</li>
+<li>Uses context managers for file handling</li>
+<li>Handles cleanup in finally block for robustness</li>
+</ul>
+</details>
+
+<details class="example" open>
+  <summary>Example</summary>
+  <blockquote>
+<blockquote>
+<blockquote>
+<p>client = Minio('play.min.io',
+...               access_key='access_key',
+...               secret_key='secret_key')
+minio_download_file(client,
+...                    'mybucket',
+...                    'data/file.csv',
+...                    '/local/path/file.csv')</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</details>
+
+            <details class="quote">
+              <summary>Source code in <code>hydroutils/hydro_s3.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span>
+<span class="normal">94</span>
+<span class="normal">95</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">minio_download_file</span><span class="p">(</span>
+    <span class="n">client</span><span class="p">:</span> <span class="n">Minio</span><span class="p">,</span> <span class="n">bucket_name</span><span class="p">,</span> <span class="n">object_name</span><span class="p">,</span> <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">version_id</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Download a file from MinIO S3-compatible storage.</span>
+
+<span class="sd">    This function downloads an object from MinIO storage to a local file. It</span>
+<span class="sd">    supports versioned objects and handles UTF-8 encoded text files. The function</span>
+<span class="sd">    ensures proper cleanup of resources after download.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        client (Minio): Initialized MinIO client instance.</span>
+<span class="sd">        bucket_name (str): Name of the bucket containing the object.</span>
+<span class="sd">        object_name (str): Name of the object to download.</span>
+<span class="sd">        file_path (str): Local path where the file should be saved.</span>
+<span class="sd">        version_id (str, optional): Version ID for versioned objects.</span>
+<span class="sd">            Defaults to None.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        - Assumes UTF-8 encoding for text files</span>
+<span class="sd">        - Properly closes and releases connection after download</span>
+<span class="sd">        - Uses context managers for file handling</span>
+<span class="sd">        - Handles cleanup in finally block for robustness</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; client = Minio(&#39;play.min.io&#39;,</span>
+<span class="sd">        ...               access_key=&#39;access_key&#39;,</span>
+<span class="sd">        ...               secret_key=&#39;secret_key&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; minio_download_file(client,</span>
+<span class="sd">        ...                    &#39;mybucket&#39;,</span>
+<span class="sd">        ...                    &#39;data/file.csv&#39;,</span>
+<span class="sd">        ...                    &#39;/local/path/file.csv&#39;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="n">bucket_name</span><span class="p">,</span> <span class="n">object_name</span><span class="p">,</span> <span class="n">version_id</span><span class="p">)</span>
+        <span class="n">res_csv</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;w+&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+            <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">res_csv</span><span class="p">)</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">release_conn</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="hydroutils.hydro_s3.minio_upload_file" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">minio_upload_file</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">bucket_name</span><span class="p">,</span> <span class="n">object_name</span><span class="p">,</span> <span class="n">file_path</span><span class="p">)</span></code>
+
+<a href="#hydroutils.hydro_s3.minio_upload_file" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Upload a file to MinIO S3-compatible storage.</p>
+<p>This function uploads a local file to MinIO storage. If the specified bucket
+doesn't exist, it will be created automatically. After upload, it returns a
+list of all objects in the bucket.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>client</code>
+            </td>
+            <td>
+                  <code><span title="minio.Minio">Minio</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Initialized MinIO client instance.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>bucket_name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Name of the bucket to upload to.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>object_name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Name to give the object in MinIO storage.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>file_path</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to the local file to upload.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>list[str]: List of all object names in the bucket after upload.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="note" open>
+  <summary>Note</summary>
+  <ul>
+<li>Creates bucket if it doesn't exist</li>
+<li>Uses fput_object for efficient file upload</li>
+<li>Lists all objects recursively after upload</li>
+</ul>
+</details>
+
+<details class="example" open>
+  <summary>Example</summary>
+  <blockquote>
+<blockquote>
+<blockquote>
+<p>client = Minio('play.min.io',
+...               access_key='access_key',
+...               secret_key='secret_key')
+objects = minio_upload_file(client,
+...                            'mybucket',
+...                            'data/file.csv',
+...                            '/local/path/file.csv')
+print(objects)
+['data/file.csv', 'data/other.csv']</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</details>
+
+            <details class="quote">
+              <summary>Source code in <code>hydroutils/hydro_s3.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">minio_upload_file</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">bucket_name</span><span class="p">,</span> <span class="n">object_name</span><span class="p">,</span> <span class="n">file_path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Upload a file to MinIO S3-compatible storage.</span>
+
+<span class="sd">    This function uploads a local file to MinIO storage. If the specified bucket</span>
+<span class="sd">    doesn&#39;t exist, it will be created automatically. After upload, it returns a</span>
+<span class="sd">    list of all objects in the bucket.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        client (minio.Minio): Initialized MinIO client instance.</span>
+<span class="sd">        bucket_name (str): Name of the bucket to upload to.</span>
+<span class="sd">        object_name (str): Name to give the object in MinIO storage.</span>
+<span class="sd">        file_path (str): Path to the local file to upload.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list[str]: List of all object names in the bucket after upload.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        - Creates bucket if it doesn&#39;t exist</span>
+<span class="sd">        - Uses fput_object for efficient file upload</span>
+<span class="sd">        - Lists all objects recursively after upload</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; client = Minio(&#39;play.min.io&#39;,</span>
+<span class="sd">        ...               access_key=&#39;access_key&#39;,</span>
+<span class="sd">        ...               secret_key=&#39;secret_key&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; objects = minio_upload_file(client,</span>
+<span class="sd">        ...                            &#39;mybucket&#39;,</span>
+<span class="sd">        ...                            &#39;data/file.csv&#39;,</span>
+<span class="sd">        ...                            &#39;/local/path/file.csv&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; print(objects)</span>
+<span class="sd">        [&#39;data/file.csv&#39;, &#39;data/other.csv&#39;]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Make a bucket</span>
+    <span class="n">bucket_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">bucket</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">bucket</span> <span class="ow">in</span> <span class="n">client</span><span class="o">.</span><span class="n">list_buckets</span><span class="p">()]</span>
+    <span class="k">if</span> <span class="n">bucket_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">bucket_names</span><span class="p">:</span>
+        <span class="n">client</span><span class="o">.</span><span class="n">make_bucket</span><span class="p">(</span><span class="n">bucket_name</span><span class="p">)</span>
+    <span class="c1"># Upload an object</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">fput_object</span><span class="p">(</span><span class="n">bucket_name</span><span class="p">,</span> <span class="n">object_name</span><span class="p">,</span> <span class="n">file_path</span><span class="p">)</span>
+    <span class="c1"># List objects</span>
+    <span class="n">objects</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">list_objects</span><span class="p">(</span><span class="n">bucket_name</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">obj</span><span class="o">.</span><span class="n">object_name</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">objects</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
 
 
 
@@ -1118,7 +2143,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2025-08-19
+    2025-08-20
   </span>
 
     

@@ -25,7 +25,7 @@
          <lastmod>2025-08-20</lastmod>
     </url>
     <url>
-         <loc>https://zhuanglaihong.github.io/hydroutils/api/hydro_arithmetric/</loc>
+         <loc>https://zhuanglaihong.github.io/hydroutils/api/hydro_event/</loc>
          <lastmod>2025-08-20</lastmod>
     </url>
     <url>
@@ -50,6 +50,10 @@
     </url>
     <url>
          <loc>https://zhuanglaihong.github.io/hydroutils/api/hydro_time/</loc>
+         <lastmod>2025-08-20</lastmod>
+    </url>
+    <url>
+         <loc>https://zhuanglaihong.github.io/hydroutils/api/hydro_units/</loc>
          <lastmod>2025-08-20</lastmod>
     </url>
     <url>
